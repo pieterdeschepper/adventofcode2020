@@ -47,3 +47,23 @@ function getAdjacentSeatCount(x,y) {
     }
     return count;
 }
+
+function getState() {
+    var state = grid.map((arr) => arr.slice());
+    for (let i=0;i<state.length;i++) {
+        state[i] = state[i].join('');
+    }
+    return state.join('');
+}
+
+function countOccupiedSeats() {
+    let count = 0;
+    for (let i = 0; i<grid.length;i++) {
+        for (let j = 0; j < grid[i].length; j++) {
+            if(grid[i][j] == "#") {
+                count++;
+            }
+        }
+    }
+    return count;
+}
